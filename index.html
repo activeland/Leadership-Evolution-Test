@@ -1,665 +1,120 @@
-From: <Saved by Blink>
-Snapshot-Content-Location: file:///C:/Users/anna.agashkova/Downloads/leader_test_3.html
-Subject: =?utf-8?Q?=D0=AD=D0=B2=D0=BE=D0=BB=D1=8E=D1=86=D0=B8=D1=8F=20=D0=BB=D0=B8?=
- =?utf-8?Q?=D0=B4=D0=B5=D1=80=D0=B0=20=E2=80=94=20=D0=A2=D0=B5=D1=81=D1=82?=
-Date: Thu, 28 May 2026 08:50:32 +0300
-MIME-Version: 1.0
-Content-Type: multipart/related;
-	type="text/html";
-	boundary="----MultipartBoundary--SfP5uNn9iL5AXmHEc9F554zi1eLPB7H6AzBA3MzRtn----"
-
-
-------MultipartBoundary--SfP5uNn9iL5AXmHEc9F554zi1eLPB7H6AzBA3MzRtn----
-Content-Type: text/html
-Content-ID: <frame-2FF30E141F14D3C2EE47731025AF60FF@mhtml.blink>
-Content-Transfer-Encoding: quoted-printable
-Content-Location: file:///C:/Users/anna.agashkova/Downloads/leader_test_3.html
-
-<!DOCTYPE html><html lang=3D"ru"><head><meta http-equiv=3D"Content-Type" co=
-ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
-css" href=3D"cid:css-456d424f-7fe2-4ae6-997e-3312b1999a15@mhtml.blink" />
-
-<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
-0">
-<title>=D0=AD=D0=B2=D0=BE=D0=BB=D1=8E=D1=86=D0=B8=D1=8F =D0=BB=D0=B8=D0=B4=
-=D0=B5=D1=80=D0=B0 =E2=80=94 =D0=A2=D0=B5=D1=81=D1=82</title>
-<link href=3D"https://fonts.googleapis.com/css2?family=3DMontserrat:wght@40=
-0;500;600;700;800&amp;display=3Dswap" rel=3D"stylesheet">
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Эволюция лидера — Тест</title>
+<link href="https://googleapis.com" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background-color: #121826; color: #ffffff; margin: 0; padding: 0; }
+  .header { text-align: center; padding: 60px 20px 40px; background: radial-gradient(circle at top, #1e293b 0%, #111827 100%); }
+  .header-logo { font-weight: 800; font-size: 24px; color: #10b981; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+  .header-logo span { color: #ffffff; }
+  h1 { font-size: 36px; font-weight: 800; margin: 0 0 15px; line-height: 1.3; color: #ffffff; }
+  .header-sub { font-size: 14px; color: #9ca3af; letter-spacing: 1px; }
+  .progress-wrap { width: 100%; height: 4px; background: #1f2937; position: sticky; top: 0; z-index: 100; }
+  .progress-bar { height: 100%; width: 0%; background: #10b981; transition: width 0.3s ease; }
+  .container { max-width: 680px; margin: 40px auto; padding: 0 20px; }
+  .screen { display: none; }
+  .screen.active { display: block; animation: fadeIn 0.4s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .intro-card, .q-card, .quadrant-card, .dim-card { background: #1f2937; padding: 40px; border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); border: 1px solid #374151; margin-bottom: 25px; }
+  h2 { font-size: 24px; font-weight: 700; margin-top: 0; margin-bottom: 20px; color: #ffffff; }
+  p { color: #9ca3af; font-size: 16px; line-height: 1.6; margin-top: 0; margin-bottom: 20px; }
+  strong { color: #ffffff; }
+  .scale-legend { background: #111827; padding: 20px; border-radius: 12px; margin: 25px 0; border: 1px solid #374151; }
+  .scale-row { display: flex; align-items: center; margin-bottom: 12px; font-size: 15px; color: #d1d5db; }
+  .scale-row:last-child { margin-bottom: 0; }
+  .scale-num { background: #374151; color: #10b981; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+  button { font-family: 'Montserrat', sans-serif; background: #10b981; color: #ffffff; border: none; padding: 16px 32px; font-size: 16px; font-weight: 700; border-radius: 12px; cursor: pointer; transition: all 0.2s ease; width: 100%; text-align: center; }
+  button:hover { background: #059669; transform: translateY(-1px); }
+  .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+  .q-counter { background: #374151; color: #9ca3af; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+  .q-text { font-size: 20px; font-weight: 600; color: #ffffff; line-height: 1.5; margin-bottom: 30px; min-height: 60px; }
+  .rating-group { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+  .rating-btn { background: #111827; border: 2px solid #374151; color: #9ca3af; height: 56px; font-size: 18px; font-weight: 700; border-radius: 12px; cursor: pointer; transition: all 0.2s; width: auto; flex: 1; }
+  .rating-btn:hover { border-color: #9ca3af; color: #ffffff; }
+  .rating-btn.selected { background: #10b981; border-color: #10b981; color: #ffffff; box-shadow: 0 0 20px rgba(16,185,129,0.4); }
+  .rating-labels { display: flex; justify-content: space-between; font-size: 13px; color: #6b7280; font-weight: 500; margin-bottom: 35px; }
+  .q-nav { display: flex; justify-content: space-between; gap: 20px; }
+  .btn-prev { background: #374151; color: #d1d5db; width: auto; padding: 16px 24px; }
+  .btn-prev:hover { background: #4b5563; }
+  .btn-next { width: auto; padding: 16px 32px; }
+  .btn-next:disabled { background: #1f2937; color: #4b5563; border: 1px solid #374151; cursor: not-allowed; transform: none; }
+  .results-header { text-align: center; margin-bottom: 40px; }
+  .results-eyebrow { font-size: 14px; font-weight: 700; color: #10b981; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+  .results-title { font-size: 32px; font-weight: 800; color: #ffffff; margin-bottom: 10px; }
+  .results-sub { font-size: 16px; color: #9ca3af; }
+  .scores-row { display: flex; gap: 20px; margin-bottom: 30px; }
+  .score-block { flex: 1; background: #1f2937; padding: 25px; border-radius: 20px; text-align: center; border: 1px solid #374151; }
+  .score-label { font-size: 12px; font-weight: 700; color: #9ca3af; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+  .score-num { font-size: 42px; font-weight: 800; line-height: 1; margin-bottom: 5px; }
+  .mind-color { color: #3b82f6; }
+  .stable-color { color: #f59e0b; }
+  .score-max { font-size: 13px; color: #6b7280; }
+  .matrix-wrap { background: #1f2937; padding: 30px; border-radius: 20px; border: 1px solid #374151; margin-bottom: 30px; }
+  .matrix-title { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 20px; text-align: center; }
+  .matrix-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+  .matrix-cell { background: #111827; border: 2px dashed #374151; padding: 25px 15px; border-radius: 14px; text-align: center; font-size: 15px; font-weight: 700; color: #6b7280; min-height: 100px; display: flex; align-items: center; justify-content: center; line-height: 1.4; }
+  .matrix-cell.active { background: rgba(16,185,129,0.1); border: 2px solid #10b981; color: #10b981; box-shadow: 0 0 15px rgba(16,185,129,0.1); }
+  .matrix-labels { display: flex; justify-content: space-between; font-size: 12px; color: #4b5563; margin-top: 12px; font-weight: 500; }
+  .q-badge { display: inline-block; background: rgba(16,185,129,0.1); color: #10b981; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(16,185,129,0.2); }
+  .q-name { font-size: 24px; font-weight: 800; color: #ffffff; margin-bottom: 15px; }
+  .q-desc { font-size: 15px; color: #9ca3af; line-height: 1.7; }
+  .dim-card { padding: 30px; }
+  .dim-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+  .dim-name { font-size: 16px; font-weight: 700; color: #ffffff; }
+  .dim-level { font-size: 13px; font-weight: 600; color: #ffffff; background: #374151; padding: 4px 12px; border-radius: 20px; }
+  .dim-bar-bg { width: 100%; height: 8px; background: #111827; border-radius: 4px; margin-bottom: 15px; overflow: hidden; }
+  .dim-bar { height: 100%; width: 0%; border-radius: 4px; transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+  .bar-mind { background: #3b82f6; }
+  .bar-stable { background: #f59e0b; }
+  .dim-interpretation { font-size: 14px; color: #9ca3af; line-height: 1.6; }
+  @media(max-width: 500px) {
+    .scores-row { flex-direction: column; }
+    .rating-group { gap: 6px; }
+    .rating-btn { height: 48px; font-size: 16px; }
+    .q-nav { flex-direction: column-reverse; }
+    .btn-prev, .btn-next { width: 100%; }
+  }
+</style>
 </head>
 <body>
-
-<div class=3D"header">
-  <div class=3D"header-inner">
-    <div class=3D"header-logo">Active <span>CLOUD</span></div>
-    <h1>=D0=AD=D0=B2=D0=BE=D0=BB=D1=8E=D1=86=D0=B8=D1=8F =D0=BB=D0=B8=D0=B4=
-=D0=B5=D1=80=D0=B0.<br>=D0=9A=D0=B0=D0=BA =D0=BF=D0=B5=D1=80=D0=B5=D0=B9=D1=
-=82=D0=B8 =D0=B2 =D0=BD=D0=BE=D0=B2=D1=8B=D0=B9 =D0=BC=D0=B0=D1=81=D1=88=D1=
-=82=D0=B0=D0=B1</h1>
-    <div class=3D"header-sub">=D0=94=D0=B8=D0=B0=D0=B3=D0=BD=D0=BE=D1=81=D1=
-=82=D0=B8=D0=BA=D0=B0 =C2=B7 =D0=90=D0=BD=D0=BD=D0=B0 =D0=90=D0=B3=D0=B0=D1=
-=88=D0=BA=D0=BE=D0=B2=D0=B0 =C2=B7 =D0=9F=D1=80=D0=B0=D0=BA=D1=82=D0=B8=D0=
-=BA=D0=B8 =D0=BB=D0=B8=D0=B4=D0=B5=D1=80=D1=81=D1=82=D0=B2=D0=B0</div>
-  </div>
-</div>
-<div class=3D"progress-wrap"><div class=3D"progress-bar" id=3D"progressBar"=
-></div></div>
-
-<div class=3D"container">
-
-  <!-- INTRO -->
-  <div class=3D"screen active" id=3D"screen-intro">
-    <div class=3D"intro-card">
-      <h2>=D0=9E =D1=82=D0=B5=D1=81=D1=82=D0=B5</h2>
-      <p>=D0=A2=D0=B5=D1=81=D1=82 =D0=BF=D0=BE=D0=BC=D0=BE=D0=B3=D0=B0=D0=
-=B5=D1=82 =D0=BE=D0=BF=D1=80=D0=B5=D0=B4=D0=B5=D0=BB=D0=B8=D1=82=D1=8C =D0=
-=B4=D0=B2=D0=B0 =D0=BA=D0=BB=D1=8E=D1=87=D0=B5=D0=B2=D1=8B=D1=85 =D0=BF=D0=
-=B0=D1=80=D0=B0=D0=BC=D0=B5=D1=82=D1=80=D0=B0 =D0=BB=D0=B8=D0=B4=D0=B5=D1=
-=80=D1=81=D0=BA=D0=BE=D0=B9 =D0=B7=D1=80=D0=B5=D0=BB=D0=BE=D1=81=D1=82=D0=
-=B8 =E2=80=94 <strong>=D0=BC=D0=B0=D1=81=D1=88=D1=82=D0=B0=D0=B1 =D0=BC=D1=
-=8B=D1=88=D0=BB=D0=B5=D0=BD=D0=B8=D1=8F</strong> =D0=B8 <strong>=D1=83=D1=
-=81=D1=82=D0=BE=D0=B9=D1=87=D0=B8=D0=B2=D0=BE=D1=81=D1=82=D1=8C</strong> =
-=E2=80=94 =D0=B8 =D0=BD=D0=B0=D0=B9=D1=82=D0=B8 =D1=81=D0=B2=D0=BE=D0=B9 =
-=D0=BA=D0=B2=D0=B0=D0=B4=D1=80=D0=B0=D0=BD=D1=82 =D1=80=D0=B0=D0=B7=D0=B2=
-=D0=B8=D1=82=D0=B8=D1=8F =D0=BF=D0=BE =D0=BC=D0=BE=D0=B4=D0=B5=D0=BB=D0=B8 =
-=D0=91=D0=B8=D0=BB=D0=BB=D0=B0 =D0=A2=D0=BE=D1=80=D0=B1=D0=B5=D1=80=D1=82=
-=D0=B0.</p>
-      <p>12 =D1=83=D1=82=D0=B2=D0=B5=D1=80=D0=B6=D0=B4=D0=B5=D0=BD=D0=B8=D0=
-=B9. =D0=9E=D1=86=D0=B5=D0=BD=D0=B8=D1=82=D0=B5 =D0=BA=D0=B0=D0=B6=D0=B4=D0=
-=BE=D0=B5 =D1=87=D0=B5=D1=81=D1=82=D0=BD=D0=BE =E2=80=94 =D0=BF=D0=BE =D1=
-=88=D0=BA=D0=B0=D0=BB=D0=B5 =D0=BE=D1=82 1 =D0=B4=D0=BE 5.</p>
-      <div class=3D"scale-legend">
-        <div class=3D"scale-row"><div class=3D"scale-num">1</div> =D0=A1=D0=
-=BE=D0=B2=D1=81=D0=B5=D0=BC =D0=BD=D0=B5 =D0=BF=D1=80=D0=BE =D0=BC=D0=B5=D0=
-=BD=D1=8F</div>
-        <div class=3D"scale-row"><div class=3D"scale-num">2</div> =D0=A1=D0=
-=BA=D0=BE=D1=80=D0=B5=D0=B5 =D0=BD=D0=B5 =D0=BF=D1=80=D0=BE =D0=BC=D0=B5=D0=
-=BD=D1=8F</div>
-        <div class=3D"scale-row"><div class=3D"scale-num">3</div> =D0=9E=D1=
-=82=D1=87=D0=B0=D1=81=D1=82=D0=B8 =D0=BF=D1=80=D0=BE =D0=BC=D0=B5=D0=BD=D1=
-=8F</div>
-        <div class=3D"scale-row"><div class=3D"scale-num">4</div> =D0=A1=D0=
-=BA=D0=BE=D1=80=D0=B5=D0=B5 =D0=BF=D1=80=D0=BE =D0=BC=D0=B5=D0=BD=D1=8F</di=
-v>
-        <div class=3D"scale-row"><div class=3D"scale-num">5</div> =D0=9F=D0=
-=BE=D0=BB=D0=BD=D0=BE=D1=81=D1=82=D1=8C=D1=8E =D0=BF=D1=80=D0=BE =D0=BC=D0=
-=B5=D0=BD=D1=8F</div>
+<div class="header"><div class="header-inner"><div class="header-logo">Active <span>CLOUD</span></div><h1>Эволюция лидера.<br>Как перейти в новый масштаб</h1><div class="header-sub">Диагностика · Анна Агашкова · Практики лидерства</div></div></div>
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+<div class="container">
+  <div class="screen active" id="screen-intro">
+    <div class="intro-card">
+      <h2>О тесте</h2>
+      <p>Тест помогает определить два ключевых параметра лидерской зрелости — <strong>масштаб мышления</strong> и <strong>устойчивость</strong> — и найти свой квадрант развития по модели Билла Торберта.</p>
+      <p>12 утверждений. Оцените каждое честно — по шкале от 1 до 5.</p>
+      <div class="scale-legend">
+        <div class="scale-row"><div class="scale-num">1</div> Совсем не про меня</div>
+        <div class="scale-row"><div class="scale-num">2</div> Скорее не про меня</div>
+        <div class="scale-row"><div class="scale-num">3</div> Отчасти про меня</div>
+        <div class="scale-row"><div class="scale-num">4</div> Скорее про меня</div>
+        <div class="scale-row"><div class="scale-num">5</div> Полностью про меня</div>
       </div>
-      <p>=D0=A0=D0=B5=D0=B7=D1=83=D0=BB=D1=8C=D1=82=D0=B0=D1=82=D1=8B =E2=
-=80=94 =D1=82=D0=BE=D0=BB=D1=8C=D0=BA=D0=BE =D0=B4=D0=BB=D1=8F =D0=B2=D0=B0=
-=D1=81. =D0=97=D0=B0=D0=B9=D0=BC=D1=91=D1=82 3=E2=80=934 =D0=BC=D0=B8=D0=BD=
-=D1=83=D1=82=D1=8B.</p>
-      <button class=3D"btn-start">=D0=9D=D0=B0=D1=87=D0=B0=D1=82=D1=8C =D1=
-=82=D0=B5=D1=81=D1=82 =E2=86=92</button>
+      <p>Результаты — только для вас. Займёт 3–4 минуты.</p>
+      <button class="btn-start" id="btnStart">Начать тест →</button>
     </div>
   </div>
-
-  <!-- QUESTIONS -->
-  <div class=3D"screen" id=3D"screen-q">
-    <div class=3D"q-header">
-      <span class=3D"q-counter" id=3D"qCounter">=D0=92=D0=BE=D0=BF=D1=80=D0=
-=BE=D1=81 1 =D0=B8=D0=B7 12</span>
-      <span class=3D"q-section-label" id=3D"qSection"></span>
-    </div>
-    <div class=3D"q-card" id=3D"qCard">
-      <div class=3D"q-text" id=3D"qText"></div>
-      <div class=3D"rating-group" id=3D"ratingGroup"></div>
-      <div class=3D"rating-labels"><span>=D0=A1=D0=BE=D0=B2=D1=81=D0=B5=D0=
-=BC =D0=BD=D0=B5 =D0=BF=D1=80=D0=BE =D0=BC=D0=B5=D0=BD=D1=8F</span><span>=
-=D0=9F=D0=BE=D0=BB=D0=BD=D0=BE=D1=81=D1=82=D1=8C=D1=8E =D0=BF=D1=80=D0=BE =
-=D0=BC=D0=B5=D0=BD=D1=8F</span></div>
-      <div class=3D"q-nav">
-        <button class=3D"btn-prev" id=3D"btnPrev">=E2=86=90 =D0=9D=D0=B0=D0=
-=B7=D0=B0=D0=B4</button>
-        <button class=3D"btn-next" id=3D"btnNext">=D0=94=D0=B0=D0=BB=D0=B5=
-=D0=B5 =E2=86=92</button>
-      </div>
+  <div class="screen" id="screen-q">
+    <div class="q-header"><span class="q-counter" id="qCounter">Вопрос 1 из 12</span></div>
+    <div class="q-card" id="qCard">
+      <div class="q-text" id="qText"></div>
+      <div class="rating-group" id="ratingGroup"></div>
+      <div class="rating-labels"><span>Совсем не про меня</span><span>Полностью про меня</span></div>
+      <div class="q-nav"><button class="btn-prev" id="btnPrev">← Назад</button><button class="btn-next" id="btnNext" disabled="">Далее →</button></div>
     </div>
   </div>
-
-  <!-- RESULTS -->
-  <div class=3D"screen" id=3D"screen-results">
-    <div class=3D"results-header">
-      <div class=3D"results-eyebrow">=D0=92=D0=B0=D1=88 =D1=80=D0=B5=D0=B7=
-=D1=83=D0=BB=D1=8C=D1=82=D0=B0=D1=82</div>
-      <div class=3D"results-title" id=3D"resTitle"></div>
-      <div class=3D"results-sub" id=3D"resSub"></div>
+  <div class="screen" id="screen-results">
+    <div class="results-header"><div class="results-eyebrow">Ваш результат</div><div class="results-title" id="resTitle">Тест завершен</div><div class="results-sub" id="resSub">Профиль лидерской зрелости</div></div>
+    <div class="scores-row">
+      <div class="score-block"><div class="score-label">Масштаб мышления</div><div class="score-num mind-color" id="scoreMind">—</div><div class="score-max">из 30</div></div>
+      <div class="score-block"><div class="score-label">Устойчивость</div><div class="score-num stable-color" id="scoreStable">—</div><div class="score-max">из 30</div></div>
     </div>
-
-    <div class=3D"scores-row">
-      <div class=3D"score-block">
-        <div class=3D"score-label">=D0=9C=D0=B0=D1=81=D1=88=D1=82=D0=B0=D0=
-=B1 =D0=BC=D1=8B=D1=88=D0=BB=D0=B5=D0=BD=D0=B8=D1=8F</div>
-        <div class=3D"score-num mind-color" id=3D"scoreMind">=E2=80=94</div=
->
-        <div class=3D"score-max">=D0=B8=D0=B7 30</div>
-      </div>
-      <div class=3D"score-block">
-        <div class=3D"score-label">=D0=A3=D1=81=D1=82=D0=BE=D0=B9=D1=87=D0=
-=B8=D0=B2=D0=BE=D1=81=D1=82=D1=8C</div>
-        <div class=3D"score-num stable-color" id=3D"scoreStable">=E2=80=94<=
-/div>
-        <div class=3D"score-max">=D0=B8=D0=B7 30</div>
-      </div>
-    </div>
-
-    <div class=3D"matrix-wrap">
-      <div class=3D"matrix-title">=D0=9A=D0=B2=D0=B0=D0=B4=D1=80=D0=B0=D0=
-=BD=D1=82 =D1=80=D0=B0=D0=B7=D0=B2=D0=B8=D1=82=D0=B8=D1=8F</div>
-      <div class=3D"matrix-grid" id=3D"matrixGrid"></div>
-      <div class=3D"matrix-labels">
-        <span>=E2=86=99 =D0=9D=D0=B8=D0=B7=D0=BA=D0=B8=D0=B9 =D0=BC=D0=B0=
-=D1=81=D1=88=D1=82=D0=B0=D0=B1</span>
-        <span>=D0=92=D1=8B=D1=81=D0=BE=D0=BA=D0=B8=D0=B9 =D0=BC=D0=B0=D1=81=
-=D1=88=D1=82=D0=B0=D0=B1 =E2=86=97</span>
-      </div>
-    </div>
-
-    <div class=3D"quadrant-card">
-      <div class=3D"q-badge" id=3D"qBadge"></div>
-      <div class=3D"q-name" id=3D"qName"></div>
-      <div class=3D"q-desc" id=3D"qDesc"></div>
-    </div>
-
-    <div class=3D"dim-cards">
-      <div class=3D"dim-card">
-        <div class=3D"dim-header">
-          <div class=3D"dim-name">=F0=9F=A7=AD =D0=9C=D0=B0=D1=81=D1=88=D1=
-=82=D0=B0=D0=B1 =D0=BC=D1=8B=D1=88=D0=BB=D0=B5=D0=BD=D0=B8=D1=8F</div>
-          <div class=3D"dim-level" id=3D"mindLevel"></div>
-        </div>
-        <div class=3D"dim-bar-bg"><div class=3D"dim-bar bar-mind" id=3D"min=
-dBar" style=3D"width:0%"></div></div>
-        <div class=3D"dim-interpretation" id=3D"mindInterp"></div>
-      </div>
-      <div class=3D"dim-card">
-        <div class=3D"dim-header">
-          <div class=3D"dim-name">=E2=9A=93 =D0=A3=D1=81=D1=82=D0=BE=D0=B9=
-=D1=87=D0=B8=D0=B2=D0=BE=D1=81=D1=82=D1=8C</div>
-          <div class=3D"dim-level" id=3D"stableLevel"></div>
-        </div>
-        <div class=3D"dim-bar-bg"><div class=3D"dim-bar bar-stable" id=3D"s=
-tableBar" style=3D"width:0%"></div></div>
-        <div class=3D"dim-interpretation" id=3D"stableInterp"></div>
-      </div>
-    </div>
-
-    <div class=3D"recs-card">
-      <div class=3D"recs-title">=D0=A0=D0=B5=D0=BA=D0=BE=D0=BC=D0=B5=D0=BD=
-=D0=B4=D0=B0=D1=86=D0=B8=D0=B8 =D0=B4=D0=BB=D1=8F =D0=B2=D0=B0=D1=88=D0=B5=
-=D0=B3=D0=BE =D0=BA=D0=B2=D0=B0=D0=B4=D1=80=D0=B0=D0=BD=D1=82=D0=B0</div>
-      <div id=3D"recsList"></div>
-    </div>
-
-    <div class=3D"quote-block">=C2=AB=D0=AD=D0=B2=D0=BE=D0=BB=D1=8E=D1=86=
-=D0=B8=D1=8F =D0=BB=D0=B8=D0=B4=D0=B5=D1=80=D0=B0 =E2=80=94 =D1=8D=D1=82=D0=
-=BE =D0=B4=D0=B2=D0=B8=D0=B6=D0=B5=D0=BD=D0=B8=D0=B5 =D0=B2=D0=B2=D0=B5=D1=
-=80=D1=85 =D0=B2=D0=BD=D1=83=D1=82=D1=80=D0=B8 =D1=81=D0=B5=D0=B1=D1=8F. =
-=D0=92=D1=8B=D0=B1=D0=B8=D1=80=D0=B0=D0=B9 =D1=81=D0=B2=D0=BE=D1=8E =D0=B2=
-=D1=8B=D1=81=D0=BE=D1=82=D1=83.=C2=BB</div>
-
-    <button class=3D"btn-restart">=E2=86=BA =D0=9F=D1=80=D0=BE=D0=B9=D1=82=
-=D0=B8 =D1=82=D0=B5=D1=81=D1=82 =D0=B7=D0=B0=D0=BD=D0=BE=D0=B2=D0=BE</butto=
-n>
-  </div>
-
-</div>
-
-
-
-
-</body></html>
-------MultipartBoundary--SfP5uNn9iL5AXmHEc9F554zi1eLPB7H6AzBA3MzRtn----
-Content-Type: text/css
-Content-Transfer-Encoding: quoted-printable
-Content-Location: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap
-
-@charset "utf-8";
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WRhyzbi.woff2") format("woff2"); unicode-range: U+460-5=
-2F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459W1hyzbi.woff2") format("woff2"); unicode-range: U+301, =
-U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WZhyzbi.woff2") format("woff2"); unicode-range: U+102-1=
-03, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303=
--304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wdhyzbi.woff2") format("woff2"); unicode-range: U+100-2=
-BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00=
--1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, =
-U+2C60-2C7F, U+A720-A7FF; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wlhyw.woff2") format("woff2"); unicode-range: U+0-FF, U=
-+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
-0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 500;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WRhyzbi.woff2") format("woff2"); unicode-range: U+460-5=
-2F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 500;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459W1hyzbi.woff2") format("woff2"); unicode-range: U+301, =
-U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 500;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WZhyzbi.woff2") format("woff2"); unicode-range: U+102-1=
-03, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303=
--304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 500;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wdhyzbi.woff2") format("woff2"); unicode-range: U+100-2=
-BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00=
--1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, =
-U+2C60-2C7F, U+A720-A7FF; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 500;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wlhyw.woff2") format("woff2"); unicode-range: U+0-FF, U=
-+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
-0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 600;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WRhyzbi.woff2") format("woff2"); unicode-range: U+460-5=
-2F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 600;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459W1hyzbi.woff2") format("woff2"); unicode-range: U+301, =
-U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 600;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WZhyzbi.woff2") format("woff2"); unicode-range: U+102-1=
-03, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303=
--304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 600;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wdhyzbi.woff2") format("woff2"); unicode-range: U+100-2=
-BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00=
--1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, =
-U+2C60-2C7F, U+A720-A7FF; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 600;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wlhyw.woff2") format("woff2"); unicode-range: U+0-FF, U=
-+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
-0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WRhyzbi.woff2") format("woff2"); unicode-range: U+460-5=
-2F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459W1hyzbi.woff2") format("woff2"); unicode-range: U+301, =
-U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WZhyzbi.woff2") format("woff2"); unicode-range: U+102-1=
-03, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303=
--304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wdhyzbi.woff2") format("woff2"); unicode-range: U+100-2=
-BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00=
--1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, =
-U+2C60-2C7F, U+A720-A7FF; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wlhyw.woff2") format("woff2"); unicode-range: U+0-FF, U=
-+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
-0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 800;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WRhyzbi.woff2") format("woff2"); unicode-range: U+460-5=
-2F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 800;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459W1hyzbi.woff2") format("woff2"); unicode-range: U+301, =
-U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 800;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459WZhyzbi.woff2") format("woff2"); unicode-range: U+102-1=
-03, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303=
--304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 800;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wdhyzbi.woff2") format("woff2"); unicode-range: U+100-2=
-BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00=
--1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, =
-U+2C60-2C7F, U+A720-A7FF; }
-
-@font-face { font-family: Montserrat; font-style: normal; font-weight: 800;=
- font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
-TUSjIg1_i6t8kCHKm459Wlhyw.woff2") format("woff2"); unicode-range: U+0-FF, U=
-+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
-0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-------MultipartBoundary--SfP5uNn9iL5AXmHEc9F554zi1eLPB7H6AzBA3MzRtn----
-Content-Type: text/css
-Content-Transfer-Encoding: quoted-printable
-Content-Location: cid:css-456d424f-7fe2-4ae6-997e-3312b1999a15@mhtml.blink
-
-@charset "utf-8";
-
-:root { --orange: #FF6B00; --orange-dark: #E05A00; --orange-light: #FF8C3A;=
- --orange-pale: #FFF3EB; --orange-card: #FFE8D6; --blue: #1C6CA8; --blue-li=
-ght: #E8F4FF; --teal: #1A9E8F; --teal-light: #E0F5F3; --ink: #1A1A2A; --gre=
-y: #5A5A6E; --grey-light: #F2F2F5; --border: #E5E5EC; --white: #FFFFFF; }
-
-* { box-sizing: border-box; margin: 0px; padding: 0px; }
-
-body { font-family: Montserrat, sans-serif; background: rgb(245, 245, 248);=
- color: var(--ink); min-height: 100vh; font-weight: 400; }
-
-.header { background: var(--orange); color: white; padding: 40px 24px 36px;=
- text-align: left; position: relative; overflow: hidden; }
-
-.header::before { content: ""; position: absolute; top: -60px; right: -60px=
-; width: 300px; height: 300px; border-radius: 50%; background: rgba(255, 25=
-5, 255, 0.1); pointer-events: none; }
-
-.header::after { content: ""; position: absolute; bottom: -80px; right: 60p=
-x; width: 200px; height: 200px; border-radius: 50%; background: rgba(255, 2=
-55, 255, 0.07); pointer-events: none; }
-
-.header-inner { position: relative; max-width: 680px; margin: 0px auto; }
-
-.header-logo { display: inline-flex; align-items: center; gap: 6px; backgro=
-und: white; color: var(--orange); font-size: 12px; font-weight: 800; letter=
--spacing: 1px; padding: 5px 10px; border-radius: 6px; margin-bottom: 20px; =
-}
-
-.header-logo span { background: var(--orange); color: white; padding: 2px 5=
-px; border-radius: 3px; font-size: 10px; }
-
-.header h1 { font-size: clamp(22px, 5vw, 40px); font-weight: 800; line-heig=
-ht: 1.15; margin-bottom: 8px; letter-spacing: -0.5px; }
-
-.header-sub { font-size: 13px; color: rgba(255, 255, 255, 0.8); font-weight=
-: 500; letter-spacing: 0.5px; }
-
-.progress-wrap { background: rgba(0, 0, 0, 0.2); height: 4px; }
-
-.progress-bar { background: white; height: 100%; transition: width 0.5s cub=
-ic-bezier(0.4, 0, 0.2, 1); width: 0%; }
-
-.container { max-width: 680px; margin: 0px auto; padding: 28px 18px 60px; }
-
-.screen { display: none; }
-
-.screen.active { display: block; }
-
-.intro-card { background: white; border-radius: 20px; padding: 36px; box-sh=
-adow: rgba(0, 0, 0, 0.07) 0px 4px 24px; margin-top: 4px; }
-
-.intro-card h2 { font-size: 22px; font-weight: 800; margin-bottom: 14px; co=
-lor: var(--ink); }
-
-.intro-card p { font-size: 14px; line-height: 1.75; color: var(--grey); mar=
-gin-bottom: 12px; }
-
-.scale-legend { background: var(--orange-pale); border-radius: 14px; paddin=
-g: 18px 20px; margin: 20px 0px; display: flex; flex-direction: column; gap:=
- 8px; border-left: 4px solid var(--orange); }
-
-.scale-row { display: flex; align-items: center; gap: 14px; font-size: 13.5=
-px; color: var(--ink); font-weight: 500; }
-
-.scale-num { width: 28px; height: 28px; border-radius: 50%; display: flex; =
-align-items: center; justify-content: center; font-weight: 700; font-size: =
-13px; flex-shrink: 0; background: var(--orange); color: white; }
-
-.btn-start { display: block; width: 100%; background: var(--orange); color:=
- white; border-width: medium; border-style: none; border-color: currentcolo=
-r; border-image: initial; border-radius: 12px; padding: 16px; font-family: =
-Montserrat, sans-serif; font-size: 14px; font-weight: 700; cursor: pointer;=
- letter-spacing: 0.5px; transition: background 0.2s, transform 0.1s; margin=
--top: 24px; }
-
-.btn-start:hover { background: var(--orange-dark); transform: translateY(-1=
-px); }
-
-.btn-start:active { transform: translateY(0px); }
-
-.q-header { display: flex; align-items: center; justify-content: space-betw=
-een; margin-bottom: 10px; }
-
-.q-counter { font-size: 12px; letter-spacing: 1px; color: var(--grey); font=
--weight: 600; text-transform: uppercase; }
-
-.q-section-label { font-size: 11px; letter-spacing: 1.5px; text-transform: =
-uppercase; color: var(--orange); font-weight: 700; background: var(--orange=
--pale); padding: 4px 10px; border-radius: 20px; }
-
-.q-card { background: white; border-radius: 20px; padding: 30px 26px 26px; =
-box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 24px; margin-top: 8px; animation: 0=
-.3s ease 0s 1 normal both running fadeSlide; }
-
-@keyframes fadeSlide {=20
-  0% { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 1; transform: translateY(0px); }
-}
-
-.q-text { font-size: 18px; font-weight: 700; line-height: 1.45; color: var(=
---ink); margin-bottom: 26px; letter-spacing: -0.2px; }
-
-.rating-group { display: flex; gap: 8px; justify-content: space-between; }
-
-.rating-btn { flex: 1 1 0%; aspect-ratio: 1 / 1; border-radius: 12px; borde=
-r: 2px solid var(--border); background: var(--grey-light); font-family: Mon=
-tserrat, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer; tr=
-ansition: 0.15s; display: flex; align-items: center; justify-content: cente=
-r; color: var(--grey); }
-
-.rating-btn:hover { border-color: var(--orange-light); color: var(--orange)=
-; background: var(--orange-pale); transform: translateY(-2px); }
-
-.rating-btn.selected { background: var(--orange); border-color: var(--orang=
-e); color: white; transform: translateY(-3px); box-shadow: rgba(255, 107, 0=
-, 0.35) 0px 6px 18px; }
-
-.rating-labels { display: flex; justify-content: space-between; font-size: =
-10.5px; color: var(--grey); margin-top: 8px; padding: 0px 2px; font-weight:=
- 600; letter-spacing: 0.3px; }
-
-.q-nav { display: flex; gap: 10px; margin-top: 22px; }
-
-.btn-prev { flex: 1 1 0%; padding: 14px; border-radius: 12px; border: 2px s=
-olid var(--border); background: transparent; font-family: Montserrat, sans-=
-serif; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--gre=
-y); transition: 0.2s; }
-
-.btn-prev:hover { border-color: var(--orange); color: var(--orange); }
-
-.btn-next { flex: 2 1 0%; padding: 14px; border-radius: 12px; border-width:=
- medium; border-style: none; border-color: currentcolor; border-image: init=
-ial; background: var(--orange); font-family: Montserrat, sans-serif; font-s=
-ize: 13px; font-weight: 700; cursor: pointer; color: white; transition: 0.2=
-s; opacity: 0.35; pointer-events: none; }
-
-.btn-next.ready { opacity: 1; pointer-events: auto; }
-
-.btn-next.ready:hover { background: var(--orange-dark); }
-
-.results-header { background: var(--orange); border-radius: 20px; padding: =
-28px 26px; color: white; margin-bottom: 16px; position: relative; overflow:=
- hidden; }
-
-.results-header::after { content: ""; position: absolute; top: -40px; right=
-: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(=
-255, 255, 255, 0.12); }
-
-.results-eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: up=
-percase; font-weight: 700; color: rgba(255, 255, 255, 0.75); margin-bottom:=
- 8px; }
-
-.results-title { font-size: 26px; font-weight: 800; margin-bottom: 4px; let=
-ter-spacing: -0.3px; }
-
-.results-sub { font-size: 13px; color: rgba(255, 255, 255, 0.8); font-weigh=
-t: 500; }
-
-.scores-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; mar=
-gin-bottom: 14px; }
-
-.score-block { background: white; border-radius: 16px; padding: 22px 18px; =
-text-align: center; box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 16px; }
-
-.score-label { font-size: 10.5px; letter-spacing: 1.5px; text-transform: up=
-percase; color: var(--grey); margin-bottom: 8px; font-weight: 700; }
-
-.score-num { font-size: 50px; font-weight: 800; line-height: 1; }
-
-.score-max { font-size: 12px; color: var(--grey); margin-top: 2px; font-wei=
-ght: 500; }
-
-.score-num.mind-color { color: var(--orange); }
-
-.score-num.stable-color { color: var(--blue); }
-
-.matrix-wrap { background: white; border-radius: 16px; padding: 22px; margi=
-n-bottom: 14px; box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 16px; }
-
-.matrix-title { font-size: 11px; letter-spacing: 2px; text-transform: upper=
-case; color: var(--grey); margin-bottom: 14px; font-weight: 700; }
-
-.matrix-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-
-.mq-cell { border-radius: 12px; padding: 14px; font-size: 12px; line-height=
-: 1.45; font-weight: 500; color: var(--grey); background: var(--grey-light)=
-; border: 2px solid transparent; transition: 0.3s; }
-
-.mq-cell strong { display: block; font-size: 11.5px; font-weight: 700; marg=
-in-bottom: 4px; color: var(--ink); }
-
-.mq-cell.you { background: var(--orange); color: rgba(255, 255, 255, 0.85);=
- border-color: var(--orange-dark); }
-
-.mq-cell.you strong { color: white; }
-
-.you-pin { display: inline-block; background: white; color: var(--orange); =
-font-size: 9px; font-weight: 800; letter-spacing: 1px; padding: 2px 7px; bo=
-rder-radius: 10px; margin-top: 5px; text-transform: uppercase; }
-
-.matrix-labels { display: flex; justify-content: space-between; font-size: =
-10.5px; color: var(--grey); margin-top: 8px; font-weight: 600; }
-
-.quadrant-card { background: var(--ink); color: white; border-radius: 16px;=
- padding: 26px 24px; margin-bottom: 14px; position: relative; overflow: hid=
-den; }
-
-.quadrant-card::before { content: ""; position: absolute; top: -50px; right=
-: -50px; width: 200px; height: 200px; border-radius: 50%; background: radia=
-l-gradient(circle, rgba(255, 107, 0, 0.25) 0%, transparent 70%); }
-
-.q-badge { display: inline-block; background: var(--orange); color: white; =
-font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding:=
- 4px 12px; border-radius: 20px; margin-bottom: 12px; font-weight: 700; }
-
-.q-name { font-size: 22px; font-weight: 800; margin-bottom: 10px; letter-sp=
-acing: -0.3px; }
-
-.q-desc { font-size: 13.5px; line-height: 1.7; color: rgba(255, 255, 255, 0=
-.75); font-weight: 400; }
-
-.dim-cards { display: flex; flex-direction: column; gap: 12px; margin-botto=
-m: 14px; }
-
-.dim-card { background: white; border-radius: 16px; padding: 20px 20px 16px=
-; box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 16px; }
-
-.dim-header { display: flex; justify-content: space-between; align-items: c=
-enter; margin-bottom: 10px; }
-
-.dim-name { font-size: 13px; font-weight: 700; color: var(--ink); }
-
-.dim-level { font-size: 11px; letter-spacing: 1.5px; text-transform: upperc=
-ase; font-weight: 700; }
-
-.level-low { color: rgb(224, 85, 85); }
-
-.level-mid { color: var(--orange); }
-
-.level-high { color: var(--teal); }
-
-.dim-bar-bg { background: var(--grey-light); border-radius: 10px; height: 7=
-px; overflow: hidden; }
-
-.dim-bar { height: 100%; border-radius: 10px; transition: width 1s cubic-be=
-zier(0.4, 0, 0.2, 1) 0.2s; }
-
-.bar-mind { background: linear-gradient(90deg, var(--orange-dark), var(--or=
-ange-light)); }
-
-.bar-stable { background: linear-gradient(90deg, var(--blue), #4AAEE0); }
-
-.dim-interpretation { font-size: 13px; color: var(--grey); margin-top: 10px=
-; line-height: 1.65; }
-
-.recs-card { background: white; border-radius: 16px; padding: 24px 22px; bo=
-x-shadow: rgba(0, 0, 0, 0.06) 0px 3px 16px; margin-bottom: 14px; }
-
-.recs-title { font-size: 16px; font-weight: 800; margin-bottom: 16px; color=
-: var(--ink); }
-
-.rec-item { display: flex; gap: 14px; margin-bottom: 14px; align-items: fle=
-x-start; }
-
-.rec-icon { width: 38px; height: 38px; border-radius: 10px; background: var=
-(--orange-pale); display: flex; align-items: center; justify-content: cente=
-r; font-size: 18px; flex-shrink: 0; }
-
-.rec-text { font-size: 13.5px; line-height: 1.65; color: var(--grey); paddi=
-ng-top: 7px; }
-
-.rec-text strong { color: var(--ink); font-weight: 700; }
-
-.quote-block { background: var(--orange); color: white; border-radius: 16px=
-; padding: 22px 24px; font-size: 16px; font-weight: 700; line-height: 1.6; =
-margin-bottom: 20px; text-align: center; letter-spacing: -0.2px; position: =
-relative; overflow: hidden; }
-
-.quote-block::before { content: "=C2=AB"; font-size: 80px; font-weight: 800=
-; position: absolute; top: -10px; left: 10px; opacity: 0.15; line-height: 1=
-; }
-
-.btn-restart { display: block; width: 100%; background: transparent; color:=
- var(--grey); border: 2px solid var(--border); border-radius: 12px; padding=
-: 14px; font-family: Montserrat, sans-serif; font-size: 13px; font-weight: =
-600; cursor: pointer; transition: 0.2s; margin-top: 8px; }
-
-.btn-restart:hover { border-color: var(--orange); color: var(--orange); }
-
-@media (max-width: 480px) {
-  .scores-row { grid-template-columns: 1fr; }
-  .rating-group { gap: 6px; }
-  .rating-btn { font-size: 15px; }
-  .intro-card, .q-card { padding: 22px 16px; }
-}
-------MultipartBoundary--SfP5uNn9iL5AXmHEc9F554zi1eLPB7H6AzBA3MzRtn------
+    <div class="matrix-wrap">
+      <div class="matrix-title">Квадрант развития</div>
+      <div class="matrix-grid" id="matrixGrid">
