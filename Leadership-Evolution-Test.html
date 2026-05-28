@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Эволюция лидера — Тест</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FF6B00;
+    --orange-dark: #E05A00;
+    --orange-light: #FF8C3A;
+    --orange-pale: #FFF3EB;
+    --orange-card: #FFE8D6;
+    --blue: #1C6CA8;
+    --blue-light: #E8F4FF;
+    --teal: #1A9E8F;
+    --teal-light: #E0F5F3;
+    --ink: #1A1A2A;
+    --grey: #5A5A6E;
+    --grey-light: #F2F2F5;
+    --border: #E5E5EC;
+    --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: #F5F5F8;
+    color: var(--ink);
+    min-height: 100vh;
+    font-weight: 400;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: var(--orange);
+    color: white;
+    padding: 40px 24px 36px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.10);
+    pointer-events: none;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: 60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.07);
+    pointer-events: none;
+  }
+  .header-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .header-logo {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: white; color: var(--orange);
+    font-size: 12px; font-weight: 800; letter-spacing: 1px;
+    padding: 5px 10px; border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  .header-logo span { background: var(--orange); color: white; padding: 2px 5px; border-radius: 3px; font-size: 10px; }
+  .header h1 {
+    font-size: clamp(22px, 5vw, 40px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    letter-spacing: -.5px;
+  }
+  .header-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,.8);
+    font-weight: 500;
+    letter-spacing: .5px;
+  }
+
+  /* ── Progress ── */
+  .progress-wrap { background: rgba(0,0,0,.2); height: 4px; }
+  .progress-bar {
+    background: white;
+    height: 100%;
+    transition: width .5s cubic-bezier(.4,0,.2,1);
+    width: 0%;
+  }
+
+  /* ── Container ── */
+  .container { max-width: 680px; margin: 0 auto; padding: 28px 18px 60px; }
+
+  /* ── Screen logic ── */
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  /* ── Intro ── */
+  .intro-card {
+    background: white;
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.07);
+    margin-top: 4px;
+  }
+  .intro-card h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .intro-card p { font-size: 14px; line-height: 1.75; color: var(--grey); margin-bottom: 12px; }
+  .scale-legend {
+    background: var(--orange-pale);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 4px solid var(--orange);
+  }
+  .scale-row { display: flex; align-items: center; gap: 14px; font-size: 13.5px; color: var(--ink); font-weight: 500; }
+  .scale-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px; flex-shrink: 0;
+    background: var(--orange); color: white;
+  }
+  .btn-start {
+    display: block; width: 100%;
+    background: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: .5px;
+    transition: background .2s, transform .1s;
+    margin-top: 24px;
+  }
+  .btn-start:hover { background: var(--orange-dark); transform: translateY(-1px); }
+  .btn-start:active { transform: translateY(0); }
+
+  /* ── Questions ── */
+  .q-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .q-counter { font-size: 12px; letter-spacing: 1px; color: var(--grey); font-weight: 600; text-transform: uppercase; }
+  .q-section-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 700;
+    background: var(--orange-pale);
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .q-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px 26px 26px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.07);
+    margin-top: 8px;
+    animation: fadeSlide .3s ease both;
+  }
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .q-text {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 26px;
+    letter-spacing: -.2px;
+  }
+
+  /* ── Rating ── */
+  .rating-group { display: flex; gap: 8px; justify-content: space-between; }
+  .rating-btn {
+    flex: 1;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    background: var(--grey-light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .15s;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--grey);
+  }
+  .rating-btn:hover { border-color: var(--orange-light); color: var(--orange); background: var(--orange-pale); transform: translateY(-2px); }
+  .rating-btn.selected {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(255,107,0,.35);
+  }
+  .rating-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: var(--grey);
+    margin-top: 8px;
+    padding: 0 2px;
+    font-weight: 600;
+    letter-spacing: .3px;
+  }
+
+  /* ── Nav ── */
+  .q-nav { display: flex; gap: 10px; margin-top: 22px; }
+  .btn-prev {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--grey);
+    transition: .2s;
+  }
+  .btn-prev:hover { border-color: var(--orange); color: var(--orange); }
+  .btn-next {
+    flex: 2;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: var(--orange);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    transition: .2s;
+    opacity: .35;
+    pointer-events: none;
+  }
+  .btn-next.ready { opacity: 1; pointer-events: auto; }
+  .btn-next.ready:hover { background: var(--orange-dark); }
+
+  /* ── Results ── */
+  .results-header {
+    background: var(--orange);
+    border-radius: 20px;
+    padding: 28px 26px;
+    color: white;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .results-header::after {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.12);
+  }
+  .results-eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,.75); margin-bottom: 8px; }
+  .results-title { font-size: 26px; font-weight: 800; margin-bottom: 4px; letter-spacing: -.3px; }
+  .results-sub { font-size: 13px; color: rgba(255,255,255,.8); font-weight: 500; }
+
+  /* scores */
+  .scores-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+  .score-block {
+    background: white;
+    border-radius: 16px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 3px 16px rgba(0,0,0,.06);
+  }
+  .score-label { font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; font-weight: 700; }
+  .score-num { font-size: 50px; font-weight: 800; line-height: 1; }
+  .score-max { font-size: 12px; color: var(--grey); margin-top: 2px; font-weight: 500; }
+  .score-num.mind-color { color: var(--orange); }
+  .score-num.stable-color { color: var(--blue); }
+
+  /* matrix */
+  .matrix-wrap { background: white; border-radius: 16px; padding: 22px; margin-bottom: 14px; box-shadow: 0 3px 16px rgba(0,0,0,.06); }
+  .matrix-title { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); margin-bottom: 14px; font-weight: 700; }
+  .matrix-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mq-cell {
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 12px;
+    line-height: 1.45;
+    font-weight: 500;
+    color: var(--grey);
+    background: var(--grey-light);
+    border: 2px solid transparent;
+    transition: .3s;
+  }
+  .mq-cell strong { display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px; color: var(--ink); }
+  .mq-cell.you {
+    background: var(--orange);
+    color: rgba(255,255,255,.85);
+    border-color: var(--orange-dark);
+  }
+  .mq-cell.you strong { color: white; }
+  .you-pin {
+    display: inline-block;
+    background: white;
+    color: var(--orange);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-top: 5px;
+    text-transform: uppercase;
+  }
+  .matrix-labels { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--grey); margin-top: 8px; font-weight: 600; }
+
+  /* quadrant */
+  .quadrant-card {
+    background: var(--ink);
+    color: white;
+    border-radius: 16px;
+    padding: 26px 24px;
+    margin-bottom: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .quadrant-card::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,107,0,.25) 0%, transparent 70%);
+  }
+  .q-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .q-name { font-size: 22px; font-weight: 800; margin-bottom: 10px; letter-spacing: -.3px; }
+  .q-desc { font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,.75); font-weight: 400; }
+
+  /* dim cards */
+  .dim-cards { display: flex; flex-direction: column; gap: 12px; margin-bottom: 14px; }
+  .dim-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 20px 16px;
+    box-shadow: 0 3px 16px rgba(0,0,0,.06);
+  }
+  .dim-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .dim-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+  .dim-level { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; }
+  .level-low { color: #E05555; }
+  .level-mid { color: var(--orange); }
+  .level-high { color: var(--teal); }
+  .dim-bar-bg { background: var(--grey-light); border-radius: 10px; height: 7px; overflow: hidden; }
+  .dim-bar { height: 100%; border-radius: 10px; transition: width 1s cubic-bezier(.4,0,.2,1) .2s; }
+  .bar-mind { background: linear-gradient(90deg, var(--orange-dark), var(--orange-light)); }
+  .bar-stable { background: linear-gradient(90deg, var(--blue), #4AAEE0); }
+  .dim-interpretation { font-size: 13px; color: var(--grey); margin-top: 10px; line-height: 1.65; }
+
+  /* recs */
+  .recs-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 22px;
+    box-shadow: 0 3px 16px rgba(0,0,0,.06);
+    margin-bottom: 14px;
+  }
+  .recs-title { font-size: 16px; font-weight: 800; margin-bottom: 16px; color: var(--ink); }
+  .rec-item { display: flex; gap: 14px; margin-bottom: 14px; align-items: flex-start; }
+  .rec-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--orange-pale);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .rec-text { font-size: 13.5px; line-height: 1.65; color: var(--grey); padding-top: 7px; }
+  .rec-text strong { color: var(--ink); font-weight: 700; }
+
+  /* quote */
+  .quote-block {
+    background: var(--orange);
+    color: white;
+    border-radius: 16px;
+    padding: 22px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: -.2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-block::before {
+    content: '«';
+    font-size: 80px;
+    font-weight: 800;
+    position: absolute;
+    top: -10px; left: 10px;
+    opacity: .15;
+    line-height: 1;
+  }
+
+  /* restart */
+  .btn-restart {
+    display: block; width: 100%;
+    background: transparent;
+    color: var(--grey);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+    margin-top: 8px;
+  }
+  .btn-restart:hover { border-color: var(--orange); color: var(--orange); }
+
+  @media (max-width: 480px) {
+    .scores-row { grid-template-columns: 1fr; }
+    .rating-group { gap: 6px; }
+    .rating-btn { font-size: 15px; }
+    .intro-card, .q-card { padding: 22px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-logo">Active <span>CLOUD</span></div>
+    <h1>Эволюция лидера.<br>Как перейти в новый масштаб</h1>
+    <div class="header-sub">Диагностика · Анна Агашкова · Практики лидерства</div>
+  </div>
+</div>
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="screen active" id="screen-intro">
+    <div class="intro-card">
+      <h2>О тесте</h2>
+      <p>Тест помогает определить два ключевых параметра лидерской зрелости — <strong>масштаб мышления</strong> и <strong>устойчивость</strong> — и найти свой квадрант развития по модели Билла Торберта.</p>
+      <p>12 утверждений. Оцените каждое честно — по шкале от 1 до 5.</p>
+      <div class="scale-legend">
+        <div class="scale-row"><div class="scale-num">1</div> Совсем не про меня</div>
+        <div class="scale-row"><div class="scale-num">2</div> Скорее не про меня</div>
+        <div class="scale-row"><div class="scale-num">3</div> Отчасти про меня</div>
+        <div class="scale-row"><div class="scale-num">4</div> Скорее про меня</div>
+        <div class="scale-row"><div class="scale-num">5</div> Полностью про меня</div>
+      </div>
+      <p>Результаты — только для вас. Займёт 3–4 минуты.</p>
+      <button class="btn-start" onclick="startTest()">Начать тест →</button>
+    </div>
+  </div>
+
+  <!-- QUESTIONS -->
+  <div class="screen" id="screen-q">
+    <div class="q-header">
+      <span class="q-counter" id="qCounter">Вопрос 1 из 12</span>
+      <span class="q-section-label" id="qSection"></span>
+    </div>
+    <div class="q-card" id="qCard">
+      <div class="q-text" id="qText"></div>
+      <div class="rating-group" id="ratingGroup"></div>
+      <div class="rating-labels"><span>Совсем не про меня</span><span>Полностью про меня</span></div>
+      <div class="q-nav">
+        <button class="btn-prev" id="btnPrev" onclick="prevQ()">← Назад</button>
+        <button class="btn-next" id="btnNext" onclick="nextQ()">Далее →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="screen" id="screen-results">
+    <div class="results-header">
+      <div class="results-eyebrow">Ваш результат</div>
+      <div class="results-title" id="resTitle"></div>
+      <div class="results-sub" id="resSub"></div>
+    </div>
+
+    <div class="scores-row">
+      <div class="score-block">
+        <div class="score-label">Масштаб мышления</div>
+        <div class="score-num mind-color" id="scoreMind">—</div>
+        <div class="score-max">из 30</div>
+      </div>
+      <div class="score-block">
+        <div class="score-label">Устойчивость</div>
+        <div class="score-num stable-color" id="scoreStable">—</div>
+        <div class="score-max">из 30</div>
+      </div>
+    </div>
+
+    <div class="matrix-wrap">
+      <div class="matrix-title">Квадрант развития</div>
+      <div class="matrix-grid" id="matrixGrid"></div>
+      <div class="matrix-labels">
+        <span>↙ Низкий масштаб</span>
+        <span>Высокий масштаб ↗</span>
+      </div>
+    </div>
+
+    <div class="quadrant-card">
+      <div class="q-badge" id="qBadge"></div>
+      <div class="q-name" id="qName"></div>
+      <div class="q-desc" id="qDesc"></div>
+    </div>
+
+    <div class="dim-cards">
+      <div class="dim-card">
+        <div class="dim-header">
+          <div class="dim-name">🧭 Масштаб мышления</div>
+          <div class="dim-level" id="mindLevel"></div>
+        </div>
+        <div class="dim-bar-bg"><div class="dim-bar bar-mind" id="mindBar" style="width:0%"></div></div>
+        <div class="dim-interpretation" id="mindInterp"></div>
+      </div>
+      <div class="dim-card">
+        <div class="dim-header">
+          <div class="dim-name">⚓ Устойчивость</div>
+          <div class="dim-level" id="stableLevel"></div>
+        </div>
+        <div class="dim-bar-bg"><div class="dim-bar bar-stable" id="stableBar" style="width:0%"></div></div>
+        <div class="dim-interpretation" id="stableInterp"></div>
+      </div>
+    </div>
+
+    <div class="recs-card">
+      <div class="recs-title">Рекомендации для вашего квадранта</div>
+      <div id="recsList"></div>
+    </div>
+
+    <div class="quote-block">«Эволюция лидера — это движение вверх внутри себя. Выбирай свою высоту.»</div>
+
+    <button class="btn-restart" onclick="restart()">↺ Пройти тест заново</button>
+  </div>
+
+</div>
+
+<script>
+const questions = [
+  { text: "Мне комфортно работать в условиях неопределённости", type: "mind" },
+  { text: "Я легко переключаюсь между операционными и стратегическими задачами", type: "mind" },
+  { text: "Я быстро восстанавливаюсь после стресса", type: "stable" },
+  { text: "Я вижу взаимосвязи между процессами", type: "mind" },
+  { text: "Я могу удерживать фокус на долгосрочных целях", type: "mind" },
+  { text: "Меня редко выбивают неожиданные изменения", type: "stable" },
+  { text: "Я способен удерживать несколько точек зрения одновременно", type: "mind" },
+  { text: "У меня есть устойчивые практики восстановления", type: "stable" },
+  { text: "Моя работа оказывает влияние на большое количество людей", type: "stable" },
+  { text: "Я осознаю свои реакции и модели поведения", type: "stable" },
+  { text: "Я сохраняю ясность мышления под давлением", type: "stable" },
+  { text: "Я мыслю системно, а не задачами", type: "mind" },
+];
+
+const quadrants = {
+  "high-high": {
+    badge: "Ваш квадрант",
+    name: "Эволюционный лидер",
+    desc: "Высокий масштаб и высокая устойчивость. Вы сохраняете ясность и создаёте трансформационное влияние на систему. Спокойно работаете с неопределённостью, трансформируете системы через культуру и осознанность. Ограничения практически отсутствуют.",
+    recs: [
+      { icon: "🌱", text: "<strong>Масштабируйте влияние:</strong> ваша зона роста — трансформация культуры и систем шире вашей организации." },
+      { icon: "🤝", text: "<strong>Станьте ментором:</strong> передавайте паттерны системного мышления лидерам следующего уровня." },
+      { icon: "🔭", text: "<strong>Удерживайте горизонт:</strong> практика «Подняться на балкон» (Хайфец) — фиксировать систему vs. симптом — поможет избежать затягивания в оперативность." },
+    ]
+  },
+  "high-low": {
+    badge: "Ваш квадрант",
+    name: "Перегруженный стратег",
+    desc: "Высокий масштаб мышления при низкой устойчивости. Вы видите взаимосвязи и мыслите широко, но испытываете дефицит энергии и риск выгорания, что снижает качество реализации. Ограничение — низкая устойчивость.",
+    recs: [
+      { icon: "🧘", text: "<strong>Приоритет — восстановление:</strong> трёхуровневая регуляция (тело → эмоции → ум) ежедневно, особенно после интенсивных встреч." },
+      { icon: "⏸️", text: "<strong>Встройте паузы:</strong> 10–15 минут тишины в день, дыхательная практика «квадрат» (4-4-4-4)." },
+      { icon: "🤲", text: "<strong>Постройте «Союз устойчивости»:</strong> кто удерживает вас, когда вы захвачены системой? Коуч, ментор, бадди." },
+    ]
+  },
+  "low-high": {
+    badge: "Ваш квадрант",
+    name: "Надёжный оператор",
+    desc: "Низкий масштаб мышления при высокой устойчивости. Вы обеспечиваете стабильность и спокойствие команды, опираетесь на проверенные подходы. Ограничение — масштаб мышления.",
+    recs: [
+      { icon: "🔬", text: "<strong>Расширяйте перспективу:</strong> практика трёх вопросов — что на сцене, что за кулисами, что происходит со мной?" },
+      { icon: "📅", text: "<strong>Работайте с горизонтом:</strong> раз в неделю задавайте себе: «Какой долгосрочный эффект имеет это решение?»" },
+      { icon: "🌐", text: "<strong>Выходите за рамки функции:</strong> ищите проекты, где ваши решения влияют на смежные подразделения или всю систему." },
+    ]
+  },
+  "low-low": {
+    badge: "Ваш квадрант",
+    name: "Адаптивный эксперт",
+    desc: "Пока и масштаб мышления, и устойчивость требуют развития. Вы сильны в конкретных задачах и опираетесь на опыт. Ограничение — реактивность и стереотипность действий. Рост связан с расширением перспективы и устойчивостью.",
+    recs: [
+      { icon: "🧩", text: "<strong>Начните с устойчивости:</strong> без внутренней базы расширение масштаба мышления будет тяжёлым. Выберите одну практику восстановления и закрепите её." },
+      { icon: "🎯", text: "<strong>Делегируйте и отпускайте детали:</strong> это освободит ресурс для стратегического мышления и снизит перегруз." },
+      { icon: "🤔", text: "<strong>Развивайте рефлексию:</strong> ежедневная запись — что сегодня вызвало реакцию и почему — ключ к осознанности." },
+    ]
+  }
+};
+
+let answers = new Array(12).fill(null);
+let currentQ = 0;
+
+function startTest() { showScreen('screen-q'); renderQ(); }
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function renderQ() {
+  const q = questions[currentQ];
+  document.getElementById('qCounter').textContent = `Вопрос ${currentQ + 1} из ${questions.length}`;
+  document.getElementById('qSection').textContent = q.type === 'mind' ? 'Масштаб мышления' : 'Устойчивость';
+  document.getElementById('qText').textContent = q.text;
+
+  const group = document.getElementById('ratingGroup');
+  group.innerHTML = '';
+  for (let v = 1; v <= 5; v++) {
+    const btn = document.createElement('button');
+    btn.className = 'rating-btn' + (answers[currentQ] === v ? ' selected' : '');
+    btn.textContent = v;
+    btn.onclick = () => selectAnswer(v);
+    group.appendChild(btn);
+  }
+
+  document.getElementById('qCard').style.animation = 'none';
+  requestAnimationFrame(() => { document.getElementById('qCard').style.animation = ''; });
+
+  document.getElementById('progressBar').style.width = (currentQ / questions.length * 100) + '%';
+  document.getElementById('btnPrev').style.display = currentQ === 0 ? 'none' : '';
+  const nextBtn = document.getElementById('btnNext');
+  nextBtn.textContent = currentQ === questions.length - 1 ? 'Получить результаты →' : 'Далее →';
+  updateNextBtn();
+}
+
+function selectAnswer(v) {
+  answers[currentQ] = v;
+  document.querySelectorAll('.rating-btn').forEach((btn, i) => btn.classList.toggle('selected', i + 1 === v));
+  updateNextBtn();
+}
+
+function updateNextBtn() {
+  document.getElementById('btnNext').classList.toggle('ready', answers[currentQ] !== null);
+}
+
+function nextQ() {
+  if (answers[currentQ] === null) return;
+  if (currentQ < questions.length - 1) { currentQ++; renderQ(); }
+  else showResults();
+}
+
+function prevQ() { if (currentQ > 0) { currentQ--; renderQ(); } }
+
+function getScore(type) {
+  return questions.reduce((sum, q, i) => q.type === type ? sum + (answers[i] || 0) : sum, 0);
+}
+
+function getLevel(score) {
+  if (score <= 14) return 'low';
+  if (score <= 22) return 'mid';
+  return 'high';
+}
+
+const levelLabels = { low: 'Низкий', mid: 'Средний', high: 'Высокий' };
+const levelClass = { low: 'level-low', mid: 'level-mid', high: 'level-high' };
+const mindInterps = {
+  low: "Фокус на конкретных задачах в горизонте «здесь и сейчас». Взаимосвязи между системами и долгосрочные эффекты пока трудно удерживать одновременно.",
+  mid: "Вы видите взаимосвязи и умеете переключаться, но системное видение ещё нестабильно — зависит от контекста и уровня энергии.",
+  high: "Системное и многомерное мышление. Вы удерживаете длинный горизонт, интегрируете противоречия и видите паттерны там, где другие видят только проблемы."
+};
+const stableInterps = {
+  low: "Частые перегрузки и слабая саморегуляция снижают эффективность в условиях неопределённости. Восстановление требует значительного времени.",
+  mid: "Вы сохраняете ресурс в большинстве ситуаций, но при интенсивном давлении устойчивость может просаживаться.",
+  high: "Развитая способность к саморегуляции и восстановлению. Вы сохраняете ясность даже под давлением и умеете работать с неопределённостью."
+};
+
+function showResults() {
+  document.getElementById('progressBar').style.width = '100%';
+  const mind = getScore('mind');
+  const stable = getScore('stable');
+  const mLevel = getLevel(mind);
+  const sLevel = getLevel(stable);
+  const mH = mind >= 18;
+  const sH = stable >= 18;
+  const qKey = `${mH ? 'high' : 'low'}-${sH ? 'high' : 'low'}`;
+  const quad = quadrants[qKey];
+
+  document.getElementById('resTitle').textContent = quad.name;
+  document.getElementById('resSub').textContent = 'Масштаб мышления × Устойчивость';
+  document.getElementById('scoreMind').textContent = mind;
+  document.getElementById('scoreStable').textContent = stable;
+
+  const cells = [
+    { key: 'high-low', label: 'Перегруженный стратег', desc: 'Масштаб ↑ · Устойчивость ↓' },
+    { key: 'high-high', label: 'Эволюционный лидер', desc: 'Масштаб ↑ · Устойчивость ↑' },
+    { key: 'low-low', label: 'Адаптивный эксперт', desc: 'Масштаб ↓ · Устойчивость ↓' },
+    { key: 'low-high', label: 'Надёжный оператор', desc: 'Масштаб ↓ · Устойчивость ↑' },
+  ];
+  document.getElementById('matrixGrid').innerHTML = cells.map(c => `
+    <div class="mq-cell${c.key === qKey ? ' you' : ''}">
+      <strong>${c.label}</strong>${c.desc}
+      ${c.key === qKey ? '<br><span class="you-pin">← Вы здесь</span>' : ''}
+    </div>
+  `).join('');
+
+  document.getElementById('qBadge').textContent = quad.badge;
+  document.getElementById('qName').textContent = quad.name;
+  document.getElementById('qDesc').textContent = quad.desc;
+
+  const mindEl = document.getElementById('mindLevel');
+  mindEl.textContent = levelLabels[mLevel];
+  mindEl.className = 'dim-level ' + levelClass[mLevel];
+  document.getElementById('mindInterp').textContent = mindInterps[mLevel];
+
+  const stableEl = document.getElementById('stableLevel');
+  stableEl.textContent = levelLabels[sLevel];
+  stableEl.className = 'dim-level ' + levelClass[sLevel];
+  document.getElementById('stableInterp').textContent = stableInterps[sLevel];
+
+  showScreen('screen-results');
+
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      document.getElementById('mindBar').style.width = (mind / 30 * 100) + '%';
+      document.getElementById('stableBar').style.width = (stable / 30 * 100) + '%';
+    }, 200);
+  });
+
+  document.getElementById('recsList').innerHTML = quad.recs.map(r => `
+    <div class="rec-item">
+      <div class="rec-icon">${r.icon}</div>
+      <div class="rec-text">${r.text}</div>
+    </div>
+  `).join('');
+}
+
+function restart() {
+  answers = new Array(12).fill(null);
+  currentQ = 0;
+  document.getElementById('progressBar').style.width = '0%';
+  document.getElementById('mindBar').style.width = '0%';
+  document.getElementById('stableBar').style.width = '0%';
+  showScreen('screen-intro');
+}
+</script>
+</body>
+</html>
